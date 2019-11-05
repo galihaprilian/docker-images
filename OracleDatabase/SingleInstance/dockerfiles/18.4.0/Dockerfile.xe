@@ -21,7 +21,8 @@
 #
 # Pull base image
 # ---------------
-FROM oraclelinux:7-slim
+#FROM oraclelinux:7-slim
+FROM oraclelinux
 
 # Maintainer
 # ----------
@@ -39,7 +40,8 @@ ENV ORACLE_BASE=/opt/oracle \
     CHECK_SPACE_FILE="checkSpace.sh" \
     CHECK_DB_FILE="checkDBStatus.sh" \
     INSTALL_DIR="$HOME/install" \
-    ORACLE_DOCKER_INSTALL="true"
+    ORACLE_DOCKER_INSTALL="true" \
+    ORACLE_MEMORY=4g
 
 # Use second ENV so that variable get substituted
 ENV PATH=$ORACLE_HOME/bin:$PATH
